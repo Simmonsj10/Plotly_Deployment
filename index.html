@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .jumbotron{background: url("static/Images/Proteins.jpg") center center / cover no-repeat;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Background</h3>
+        <p>
+          The human body harbors thousands of bacteria. We intend to use this bacteria to synthesize a meat protein that we will call "Improbable Beef". We have taken clincial data from 153 test subjects and used them to create interactive charts.
+        </p>
+      </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h4>Select a "Test Subject ID" below to explore the dataset</h4>
+        <p>The table and three charts below will update to reflect data for the test subject</p>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p> The bar chart (above) reflects the top 10 most populus bacteria types within the test subject. The gauge chart (to the right) how frequently the test subject washes their belly button.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p> The bubble chart above shows all of the bacteria types found inside of the subject's belly button as well as the quantity of the bacteria</p>
+      </div>
+    </div>
+  </div>
+  <script src="static/charts/plots.js"></script>
+</body>
+
+</html>
